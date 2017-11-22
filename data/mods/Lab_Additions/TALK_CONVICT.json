@@ -1,0 +1,28 @@
+[
+    {
+        "type": "talk_topic",
+        "id": "TALK_CONVICT",
+        "dynamic_line": "I'm stuck in here!",
+        "responses": [
+            {
+                "text": "Sorry, that door looks really solid.",
+                "topic": "TALK_DONE"
+            },
+            {
+                "text": "Part? I AM the rescue team.",
+                "topic": "Let me find a way to open that door..."
+            }
+        ]
+    },
+    {
+        "type": "talk_topic",
+        "id": "TALK_CONVICT_FREE",
+        "dynamic_line": "Thank God! I thought I'd never see another living human down here.",
+        "responses": [
+            {
+                "text": "Let's hope I stay that way, for both our sakes.",
+                "topic": "TALK_DONE"
+            }
+        ]
+    }
+]

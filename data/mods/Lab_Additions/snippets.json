@@ -1,0 +1,27 @@
+[
+    {
+        "type" : "snippet",
+        "category" : "<swear_surprise>",
+        "text" : [
+            "God damn!",
+            "Holy shit!",
+            "Holy fuck!",
+            "What the hell!?",
+            "Jesus Christ!",
+            "Jesus!"
+        ]
+    },
+    {
+        "type" : "snippet",
+        "category" : "<incredulous>",
+        "text" : [
+            "You <swear> kidding me?",
+            "You've got to be <swear> kidding me!",
+            "You can't be serious.",
+            "You can't be for real.",
+            "Come on, man!",
+            "Seriously?!",
+            "You're joking."
+        ]
+    }
+]

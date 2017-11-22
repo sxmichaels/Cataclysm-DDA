@@ -1,0 +1,12 @@
+[
+  {
+    "type" : "item_group",
+    "id" : "convict_clothing",
+    "subtype": "collection",
+    "items": [
+      { "item": "briefs", "chance": 100 },
+      { "item": "striped_pants", "chance": 100 },
+      { "item": "striped_shirt", "chance": 100 }
+    ]
+  }
+]

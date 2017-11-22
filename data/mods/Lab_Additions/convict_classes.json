@@ -1,0 +1,29 @@
+[
+    {
+        "type" : "npc_class",
+        "id" : "NC_CONVICT",
+        "name" : "Convict",
+        "job_description" : "I've been stuck in here since the power went out.",
+        "bonus_str" : { "rng" : [ 4, 5 ] },
+        "bonus_dex" : { "rng" : [ 4, 5 ] },
+        "bonus_int" : { "rng" : [ -1, 2 ] },
+        "bonus_per" : { "rng" : [ 0, 3 ] },
+        "skills" : [
+          { "skill": "unarmed", "level" : { "dice" : [ 2, 4 ] } },
+          { "skill": "melee", "level" : { "dice" : [ 2, 4 ] } },
+          { "skill": "dodge", "level" : { "dice" : [ 2, 4 ] } }
+        ],
+        "worn_override": "convict_clothing",
+        "carry_override": "EMPTY_GROUP",
+        "weapon_override": "EMPTY_GROUP",
+        "traits": [
+          [ "PSYCHOPATH", 100 ],
+          [ "TERRIFYING", 70 ],
+          [ "TOUGH", 50 ],
+          [ "MASOCHIST", 30 ],
+          [ "STRONGBACK", 30 ],
+          [ "UGLY", 25 ],
+          [ "CANNIBAL", 10 ]
+        ]
+    }
+]

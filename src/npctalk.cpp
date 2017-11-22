@@ -1611,7 +1611,7 @@ void dialogue::gen_responses( const talk_topic &the_topic )
                                   &talk_function::mission_success );
                     break;
                 case MGOAL_RESCUE_NPC:
-                    add_response( _( "Told you I'd come back." ), "TALK_MISSION_SUCCESS", &talk_function::mission_success );
+                    add_response( _( "Told you I'd be back." ), "TALK_MISSION_SUCCESS", &talk_function::mission_success );
                     break;
                 default:
                     add_response( _( "Mission success!  I don't know what else to say." ),

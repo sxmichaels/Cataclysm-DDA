@@ -1,0 +1,51 @@
+[
+  {
+    "id": "MISSION_FREE_TEST_SUBJECT_SELF",
+    "type": "mission_definition",
+    "name": "Free Test Subject",
+    "goal": "MGOAL_RESCUE_NPC",
+    "difficulty": 2,
+    "value": 150000,
+    "urgent": true,
+    "start": "imprison_mission_giver",
+    "end": "free_npc",
+    "//": "This quest shouldn't be given by random wandering NPCs, obviously.",
+    "origins": [ "ORIGIN_ANY_NPC" ],
+    "dialogue": {
+      "describe": "Oh my God, a survivor! Please, help get me out of here!",
+      "offer": "TODO",
+      "accepted": "Thank you so much! Please hurry...",
+      "rejected": "What?!  Please, <ill_die> without your help!",
+      "advice": "There's a computer in this room that controls the door locks on the cells. Maybe it's still working?",
+      "inquire": "Have you found a way to open the doors?",
+      "success": "Thank God! I'd have starved in there if you hadn't come by.",
+      "//": "Failure and lying don't apply in this case, as the mission giver is also the person to be rescued.",
+      "success_lie": "(if you ever see this, it's a bug)",
+      "failure": "(if you ever see this, it's a bug)"
+    }
+  },
+  {
+    "id": "MISSION_FREE_CONVICT_SELF",
+    "type": "mission_definition",
+    "name": "Free Prisoner",
+    "goal": "MGOAL_RESCUE_NPC",
+    "difficulty": 1,
+    "value": 100000,
+    "urgent": true,
+    "start": "imprison_mission_giver",
+    "end": "free_npc",
+    "origins": [ "ORIGIN_ANY_NPC" ],
+    "dialogue": {
+      "describe": "<swear_surprise> I thought I'd never see anyone else alive down here. Can ya' spare a minute for a fella' down on his luck, <name_g>?",
+      "offer": "<swear> pigs got me a few years ago for... eh, on second thought, it's not really important, heh heh. Anyways, as ya' can see, when everything went to shit, I couldn't do nothin' to get myself out. Those <swear> security bots shot up most of the place, but I guess they missed me. I got nothin' to work with in here, can ya' get me out, pal?",
+      "accepted": "Thanks, <name_g>. I'll find a way to repay ya', heh heh.",
+      "rejected": "<incredulous> You <swear> <name_b>, if I make it out of here you're <very> fucked.",
+      "advice": "Eh, maybe... pick the lock? Cut through the <swear> bars? You look like a smart fella', you'll figure somethin' out.",
+      "inquire": "You found a way to bust me out of this <swear> cell, bud? I'm <very> sick and tired of bein' <swear> stuck in here!",
+      "success": "Good work there, <name_g>. If you hadn't walked in just then I'd have <swear> starved... not really a fightin' man's way to go, if you catch my drift? Heh heh.",
+      "success_lie": "(if you ever see this, it's a bug)",
+      "failure": "(if you ever see this, it's a bug)",
+      "//": "Failure and lying don't apply in this case, as the mission giver is also the person to be rescued."
+    }
+  }
+]
