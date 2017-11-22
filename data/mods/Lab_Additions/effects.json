@@ -1,0 +1,8 @@
+[
+    {
+        "type": "effect_type",
+        "id": "imprisoned",
+        "name": ["Imprisoned"],
+        "desc": ["AI tag for when NPCs are imprisoned.  This is a bug if you have it."]
+    }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "type" : "item_group",
+    "id" : "test_subject_clothing",
+    "subtype": "collection",
+    "//" : "What about male/female specific clothing?",
+    "items": [
+      { "item": "briefs", "chance": 100 },
+      { "item": "subsuit_xl", "chance": 100 }
+    ]
+  }
+]

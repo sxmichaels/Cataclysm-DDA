@@ -332,6 +332,27 @@ bool mission::is_complete( const int _npc_id ) const
         case MGOAL_COMPUTER_TOGGLE:
             return step >= 1;
 
+        case MGOAL_RESCUE_NPC:
+            {
+                // Similar to 'find NPC', but requires that the NPC can path to you
+                npc *target = g->find_npc( target_npc_id );
+
+                if (target == nullptr) return false;
+                
+                // Check if the target NPC can path to any tile next to the player
+                auto player_pos = g->u.pos();
+                tripoint test_offset(-1, -1, 0);
+
+                for (int i = 0; i < 9; ++i) {
+                    test_offset.x = (i % 3) - 1;
+                    test_offset.y = (i / 3) - 1;
+                    if (target->update_path( player_pos + test_offset, true, false )) {
+                        return true;
+                    };
+                }
+                return false;
+            }
+
         default:
             return false;
     }

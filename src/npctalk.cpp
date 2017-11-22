@@ -50,6 +50,7 @@ const efftype_id effect_infected( "infected" );
 const efftype_id effect_infection( "infection" );
 const efftype_id effect_lying_down( "lying_down" );
 const efftype_id effect_sleep( "sleep" );
+const efftype_id effect_imprisoned( "imprisoned" );
 
 static const trait_id trait_DEBUG_MIND_CONTROL( "DEBUG_MIND_CONTROL" );
 static const trait_id trait_ELFAEYES( "ELFAEYES" );
@@ -1109,6 +1110,9 @@ std::string dialogue::dynamic_line( const talk_topic &the_topic ) const
         if( p->has_effect( effect_infection ) ) {
             return _( "Not until I get some antibiotics..." );
         }
+        if( p->has_effect( effect_imprisoned )) {
+            return _( "If only! I've got to get out of here first..." );
+        }
         if( p->has_effect( effect_asked_to_follow ) ) {
             return _( "You asked me recently; ask again later." );
         }
@@ -1532,7 +1536,12 @@ void dialogue::gen_responses( const talk_topic &the_topic )
     } else if( topic == "TALK_MISSION_ACCEPTED" ) {
         add_response_none( _( "Not a problem." ) );
         add_response( _( "Got any advice?" ), "TALK_MISSION_ADVICE" );
-        add_response( _( "Can you share some equipment?" ), "TALK_SHARE_EQUIPMENT" );
+
+        // Imprisoned NPCs are always in scenarios where they can't path to you, so
+        // your character shouldn't try to ask for equipment.
+        if( ! p->has_effect( effect_imprisoned )) {
+            add_response( _( "Can you share some equipment?" ), "TALK_SHARE_EQUIPMENT" );
+        }
         add_response_done( _( "I'll be back soon!" ) );
 
     } else if( topic == "TALK_MISSION_ADVICE" ) {
@@ -1600,6 +1609,9 @@ void dialogue::gen_responses( const talk_topic &the_topic )
                 case MGOAL_COMPUTER_TOGGLE:
                     add_response( _( "I've taken care of it..." ), "TALK_MISSION_SUCCESS",
                                   &talk_function::mission_success );
+                    break;
+                case MGOAL_RESCUE_NPC:
+                    add_response( _( "Told you I'd come back." ), "TALK_MISSION_SUCCESS", &talk_function::mission_success );
                     break;
                 default:
                     add_response( _( "Mission success!  I don't know what else to say." ),
@@ -2036,6 +2048,8 @@ void dialogue::gen_responses( const talk_topic &the_topic )
     } else if( topic == "TALK_SHARE_EQUIPMENT" ) {
         if( p->has_effect( effect_asked_for_item ) ) {
             add_response_none( _( "Okay, fine." ) );
+        } else if( p->has_effect( effect_imprisoned ) ) {
+            add_response_none( _( "Right, of course..." ) );
         } else {
             int score = p->op_of_u.trust + p->op_of_u.value * 3 +
                         p->personality.altruism * 2;

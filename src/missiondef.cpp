@@ -94,6 +94,7 @@ static const std::map<std::string, std::function<void(mission *)>> mission_funct
     { "standard", { } },
     { "join", mission_start::join },
     { "infect_npc", mission_start::infect_npc },
+    { "imprison_mission_giver", mission_start::imprison_mission_giver },
     { "need_drugs_npc", mission_start::need_drugs_npc },
     { "place_dog", mission_start::place_dog },
     { "place_zombie_mom", mission_start::place_zombie_mom },
@@ -162,6 +163,7 @@ static const std::map<std::string, std::function<void(mission *)>> mission_funct
     { "thankful", mission_end::thankful },
     { "deposit_box", mission_end::deposit_box },
     { "heal_infection", mission_end::heal_infection },
+    { "free_npc", mission_end::free_npc },
     // Failures
     { "kill_npc", mission_fail::kill_npc },
 }};
@@ -200,7 +202,8 @@ static const std::map<std::string, mission_goal> goal_map = {{
     { "MGOAL_KILL_MONSTER_TYPE", MGOAL_KILL_MONSTER_TYPE },
     { "MGOAL_RECRUIT_NPC", MGOAL_RECRUIT_NPC },
     { "MGOAL_RECRUIT_NPC_CLASS", MGOAL_RECRUIT_NPC_CLASS },
-    { "MGOAL_COMPUTER_TOGGLE", MGOAL_COMPUTER_TOGGLE }
+    { "MGOAL_COMPUTER_TOGGLE", MGOAL_COMPUTER_TOGGLE },
+    { "MGOAL_RESCUE_NPC", MGOAL_RESCUE_NPC },
 }};
 template<>
 mission_goal string_to_enum<mission_goal>( const std::string &data )

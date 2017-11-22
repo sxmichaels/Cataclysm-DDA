@@ -7,6 +7,18 @@
 #include "npc.h"
 
 const efftype_id effect_infection( "infection" );
+const efftype_id effect_imprisoned( "imprisoned" );
+
+void mission_end::free_npc( mission *miss )
+{
+    npc *p = g->find_npc( miss->get_npc_id() );
+    if( p == NULL ) {
+        debugmsg( "could not find mission NPC %d", miss->get_npc_id() );
+        return;
+    }
+
+    p->remove_effect( effect_imprisoned );
+}
 
 void mission_end::heal_infection( mission *miss )
 {

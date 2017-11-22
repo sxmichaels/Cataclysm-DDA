@@ -1,0 +1,11 @@
+[
+  {
+    "type": "MOD_INFO",
+    "ident": "lab_additions",
+    "name": "Lab Additions",
+    "authors": [ "Spencer Michaels" ],
+    "description": "Adds various quests, NPCs, and monsters to labs, increasing both risk and reward.",
+    "category": "misc_additions",
+    "dependencies": [ "dda" ]
+  }
+]

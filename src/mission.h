@@ -53,6 +53,7 @@ enum mission_goal {
     MGOAL_RECRUIT_NPC,       // Recruit a given NPC
     MGOAL_RECRUIT_NPC_CLASS, // Recruit an NPC class
     MGOAL_COMPUTER_TOGGLE,   // Activating the correct terminal will complete the mission
+    MGOAL_RESCUE_NPC,        // Find a given NPC and ensure he can path to you
     NUM_MGOAL
 };
 
@@ -79,6 +80,7 @@ struct mission_start {
     static void standard           ( mission *); // Standard for its goal type
     static void join               ( mission *); // NPC giving mission joins your party
     static void infect_npc         ( mission *); // "infection", remove antibiotics
+    static void imprison_mission_giver ( mission *); // "imprisoned", prevent giving items and following
     static void need_drugs_npc     ( mission *); // "need drugs" remove item
     static void place_dog          ( mission *); // Put a dog in a house!
     static void place_zombie_mom   ( mission *); // Put a zombie mom in a house!
@@ -150,6 +152,7 @@ struct mission_end { // These functions are run when a mission ends
     static void thankful       ( mission *); // NPC defaults to being a friendly stranger
     static void deposit_box    ( mission *); // random valuable reward
     static void heal_infection ( mission *);
+    static void free_npc       ( mission *); // Free an NPC from imprisonment
 };
 
 struct mission_fail {

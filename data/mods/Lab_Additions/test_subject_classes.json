@@ -1,0 +1,22 @@
+[
+    {
+        "type" : "npc_class",
+        "id" : "NC_TEST_SUBJECT",
+        "name" : "Test Subject",
+        "job_description" : "I've been stuck in here since the power went out.",
+        "bonus_str" : { "rng" : [ -1, 2 ] },
+        "bonus_dex" : { "rng" : [ -1, 2 ] },
+        "bonus_int" : { "rng" : [ -1, 2 ] },
+        "bonus_per" : { "rng" : [ -1, 2 ] },
+        "skills" : [
+          { "skill": "dodge", "level" : { "dice" : [ 2, 2 ] } }
+        ],
+        "worn_override": "test_subject_clothing",
+        "carry_override": "EMPTY_GROUP",
+        "weapon_override": "EMPTY_GROUP",
+        "traits": [
+          [ "UNSTABLE", 67 ],
+          [ "CHAOTIC", 33 ]
+        ]
+    }
+]

@@ -35,6 +35,7 @@ const mtype_id mon_zombie_master( "mon_zombie_master" );
 const mtype_id mon_zombie_necro( "mon_zombie_necro" );
 
 const efftype_id effect_infection( "infection" );
+const efftype_id effect_imprisoned( "imprisoned" );
 
 /* These functions are responsible for making changes to the game at the moment
  * the mission is accepted by the player.  They are also responsible for
@@ -140,6 +141,21 @@ void mission_start::infect_npc( mission *miss )
     p->remove_items_with( []( const item & it ) {
         return it.typeId() == "antibiotics";
     } );
+    // Make sure they stay here
+    p->guard_current_pos();
+}
+
+void mission_start::imprison_mission_giver( mission *miss )
+{
+    npc *p = g->find_npc( miss->npc_id );
+    miss->target_npc_id = miss->npc_id;
+
+    if( p == NULL ) {
+        debugmsg( "mission_start::imprison_mission_giver() couldn't find an NPC!" );
+        return;
+    }
+    p->add_effect( effect_imprisoned, 1, num_bp, 1, true );
+
     // Make sure they stay here
     p->guard_current_pos();
 }
