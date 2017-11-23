@@ -9,8 +9,8 @@
     "urgent": true,
     "start": "imprison_mission_giver",
     "end": "free_npc",
-    "//": "This quest shouldn't be given by random wandering NPCs, obviously.",
-    "origins": [ "ORIGIN_ANY_NPC" ],
+    "//": "This quest shouldn't be given by random wandering NPCs, obviously. Right now SECONDARY is okay since it just means the dialog will be loaded but wandering NPCs won't ever have it.",
+    "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "Oh my God, a survivor! Please, help get me out of here!",
       "offer": "TODO",
@@ -34,7 +34,7 @@
     "urgent": true,
     "start": "imprison_mission_giver",
     "end": "free_npc",
-    "origins": [ "ORIGIN_ANY_NPC" ],
+    "origins": [ "ORIGIN_SECONDARY" ],
     "dialogue": {
       "describe": "<swear_surprise> I thought I'd never see anyone else alive down here. Can ya' spare a minute for a fella' down on his luck, <name_g>?",
       "offer": "<swear> pigs got me a few years ago for... eh, on second thought, it's not really important, heh heh. Anyways, as ya' can see, when everything went to shit, I couldn't do nothin' to get myself out. Those <swear> security bots shot up most of the place, but I guess they missed me. I got nothin' to work with in here, can ya' get me out, pal?",
